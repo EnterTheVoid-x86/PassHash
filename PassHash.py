@@ -29,7 +29,7 @@ def generate_password():
         print("Shuffling available characters")
         print("Creating password")
         print("Shuffling password characters")
-        print("Printing password...")
+        print("Printing passwords...")
     random.shuffle(available)
     password = []
     for i in range(length):
@@ -38,7 +38,15 @@ def generate_password():
         
     random.shuffle(password)
 
-    print("Generated password:")
+    print("Generated passwords:")
+    print("".join(password))
+    password += [random.choice(available)]
+    random.shuffle(available)
+    random.shuffle(password)
+    print("".join(password))
+    password += [random.choice(available)]
+    random.shuffle(available)
+    random.shuffle(password)
     print("".join(password))
 
 generate_password()
